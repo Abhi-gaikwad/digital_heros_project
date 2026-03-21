@@ -14,16 +14,253 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      charities: {
+        Row: {
+          active: boolean | null
+          created_at: string | null
+          description: string | null
+          id: string
+          name: string
+        }
+        Insert: {
+          active?: boolean | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name: string
+        }
+        Update: {
+          active?: boolean | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      charity_selections: {
+        Row: {
+          charity_id: string
+          created_at: string | null
+          donation_percentage: number
+          id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          charity_id: string
+          created_at?: string | null
+          donation_percentage?: number
+          id?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          charity_id?: string
+          created_at?: string | null
+          donation_percentage?: number
+          id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "charity_selections_charity_id_fkey"
+            columns: ["charity_id"]
+            isOneToOne: false
+            referencedRelation: "charities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      draw_results: {
+        Row: {
+          created_at: string | null
+          draw_id: string
+          id: string
+          matched_numbers: number[] | null
+          matches_count: number
+          payment_status: string | null
+          prize_amount: number | null
+          proof_url: string | null
+          user_id: string
+          verification_status: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          draw_id: string
+          id?: string
+          matched_numbers?: number[] | null
+          matches_count: number
+          payment_status?: string | null
+          prize_amount?: number | null
+          proof_url?: string | null
+          user_id: string
+          verification_status?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          draw_id?: string
+          id?: string
+          matched_numbers?: number[] | null
+          matches_count?: number
+          payment_status?: string | null
+          prize_amount?: number | null
+          proof_url?: string | null
+          user_id?: string
+          verification_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "draw_results_draw_id_fkey"
+            columns: ["draw_id"]
+            isOneToOne: false
+            referencedRelation: "draws"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      draws: {
+        Row: {
+          created_at: string | null
+          draw_date: string
+          id: string
+          numbers: number[]
+          prize_pool: number | null
+          status: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          draw_date: string
+          id?: string
+          numbers: number[]
+          prize_pool?: number | null
+          status?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          draw_date?: string
+          id?: string
+          numbers?: number[]
+          prize_pool?: number | null
+          status?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      scores: {
+        Row: {
+          created_at: string | null
+          id: string
+          score_value: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          score_value: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          score_value?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          amount: number
+          created_at: string | null
+          current_period_end: string | null
+          id: string
+          plan: string
+          status: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string | null
+          current_period_end?: string | null
+          id?: string
+          plan: string
+          status?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string | null
+          current_period_end?: string | null
+          id?: string
+          plan?: string
+          status?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +387,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+    },
   },
 } as const
