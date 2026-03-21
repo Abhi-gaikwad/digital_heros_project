@@ -93,7 +93,7 @@ export default function LandingPage() {
               {
                 icon: Trophy,
                 title: 'Submit your scores',
-                desc: 'Enter your last 5 golf scores (1–45). They're your lottery numbers for the monthly draw.',
+                desc: "Enter your last 5 golf scores (1–45). They're your lottery numbers for the monthly draw.",
               },
               {
                 icon: TrendingUp,
