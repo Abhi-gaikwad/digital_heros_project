@@ -44,6 +44,6 @@ digital-heros-project/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/digital-heros-project.git
+git clone [https://github.com/your-username/digital-heros-project.git](https://github.com/Abhi-gaikwad/digital_heros_project)
 
 ## 📂 Project Structure
