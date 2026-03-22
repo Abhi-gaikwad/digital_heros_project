@@ -129,7 +129,7 @@ export default function AdminDashboard() {
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary" />
-            <span className="font-display text-xl font-bold">GolfGive</span>
+            <span className="font-display text-xl font-bold">lovable</span>
             <Badge variant="secondary" className="ml-2">Admin</Badge>
           </Link>
           <div className="flex items-center gap-3">

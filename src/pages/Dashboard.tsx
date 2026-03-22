@@ -111,7 +111,7 @@ export default function Dashboard() {
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary" />
-            <span className="font-display text-xl font-bold">GolfGive</span>
+            <span className="font-display text-xl font-bold">lovable</span>
           </Link>
           <div className="flex items-center gap-3">
             <span className="text-sm text-muted-foreground hidden sm:inline">

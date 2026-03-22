@@ -46,7 +46,7 @@ export default function AuthPage() {
         <div className="max-w-md text-primary-foreground">
           <div className="flex items-center gap-3 mb-8">
             <Heart className="h-10 w-10" />
-            <span className="font-display text-3xl font-bold">GolfGive</span>
+            <span className="font-display text-3xl font-bold">lovable</span>
           </div>
           <h1 className="font-display text-4xl font-bold leading-tight mb-4" style={{ lineHeight: '1.15' }}>
             Play golf.<br />Win prizes.<br />Change lives.
@@ -62,7 +62,7 @@ export default function AuthPage() {
         <div className="w-full max-w-sm">
           <div className="lg:hidden flex items-center gap-2 mb-8">
             <Heart className="h-7 w-7 text-primary" />
-            <span className="font-display text-2xl font-bold text-foreground">GolfGive</span>
+            <span className="font-display text-2xl font-bold text-foreground">lovable</span>
           </div>
 
           <h2 className="font-display text-2xl font-bold mb-1">

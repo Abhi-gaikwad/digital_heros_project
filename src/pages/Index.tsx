@@ -14,7 +14,7 @@ export default function LandingPage() {
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary" />
-            <span className="font-display text-xl font-bold">GolfGive</span>
+            <span className="font-display text-xl font-bold">lovable</span>
           </Link>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>
@@ -186,9 +186,9 @@ export default function LandingPage() {
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Heart className="h-5 w-5 text-primary" />
-            <span className="font-display font-semibold">GolfGive</span>
+            <span className="font-display font-semibold">lovable</span>
           </div>
-          <p className="text-sm text-muted-foreground">© 2026 GolfGive. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 lovable. All rights reserved.</p>
         </div>
       </footer>
     </div>
